@@ -1,0 +1,36 @@
+C:\Users\Fiolyne.p\AppData\Local\Temporary Projects\processAI1\bin\Debug\processAI1.exe.config
+C:\Users\Fiolyne.p\AppData\Local\Temporary Projects\processAI1\bin\Debug\processAI1.exe
+C:\Users\Fiolyne.p\AppData\Local\Temporary Projects\processAI1\bin\Debug\processAI1.pdb
+C:\Users\Fiolyne.p\AppData\Local\Temporary Projects\processAI1\obj\Debug\processAI1.exe
+C:\Users\Fiolyne.p\AppData\Local\Temporary Projects\processAI1\obj\Debug\processAI1.pdb
+D:\Desktop\S4_UQAC\STAGE\test_IPC\processAI1\processAI1\bin\Debug\processAI1.exe.config
+D:\Desktop\S4_UQAC\STAGE\test_IPC\processAI1\processAI1\obj\Debug\processAI1.exe
+D:\Desktop\S4_UQAC\STAGE\test_IPC\processAI1\processAI1\obj\Debug\processAI1.pdb
+D:\Desktop\S4_UQAC\STAGE\test_IPC\processAI1\processAI1\bin\Debug\processAI1.exe
+D:\Desktop\S4_UQAC\STAGE\test_IPC\processAI1\processAI1\bin\Debug\processAI1.pdb
+D:\Desktop\S4_UQAC\STAGE\test_IPC\processAI1\processAI1\obj\Debug\processAI1.csprojResolveAssemblyReference.cache
+D:\Desktop\S4_UQAC\STAGE\processAI1\processAI1\bin\Debug\processAI1.exe.config
+D:\Desktop\S4_UQAC\STAGE\processAI1\processAI1\obj\Debug\processAI1.exe
+D:\Desktop\S4_UQAC\STAGE\processAI1\processAI1\obj\Debug\processAI1.pdb
+D:\Desktop\S4_UQAC\STAGE\processAI1\processAI1\bin\Debug\processAI1.exe
+D:\Desktop\S4_UQAC\STAGE\processAI1\processAI1\bin\Debug\processAI1.pdb
+D:\Desktop\S4_UQAC\STAGE\processAI1\processAI1\obj\Debug\processAI1.csprojResolveAssemblyReference.cache
+D:\Logiciels développés\[2017-06-30] - Échecs\processAI1\processAI1\bin\Debug\processAI1.exe.config
+D:\Logiciels développés\[2017-06-30] - Échecs\processAI1\processAI1\obj\Debug\processAI1.exe
+D:\Logiciels développés\[2017-06-30] - Échecs\processAI1\processAI1\obj\Debug\processAI1.pdb
+D:\Logiciels développés\[2017-06-30] - Échecs\processAI1\processAI1\bin\Debug\processAI1.exe
+D:\Logiciels développés\[2017-06-30] - Échecs\processAI1\processAI1\bin\Debug\processAI1.pdb
+D:\Logiciels développés\[2017-06-30] - Échecs\processAI1\processAI1\obj\Debug\processAI1.csprojResolveAssemblyReference.cache
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\processAI1.exe.config
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\processAI1.exe
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\processAI1.pdb
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\mscorlib.dll
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\fr\mscorlib.resources.dll
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\normidna.nlp
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\normnfc.nlp
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\normnfd.nlp
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\normnfkc.nlp
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\bin\Debug\normnfkd.nlp
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\obj\Debug\processAI1.csprojResolveAssemblyReference.cache
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\obj\Debug\processAI1.exe
+D:\UQAC\Cours\Automne 2017\3. Intelligence artificielle\Exercices\TP2\Plateforme de base\processAI1\processAI1\obj\Debug\processAI1.pdb
