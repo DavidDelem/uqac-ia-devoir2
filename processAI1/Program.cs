@@ -63,7 +63,11 @@ namespace processAI1
                                 /***************************************** ECRIRE LE CODE DE L'IA *************************************/
                                 /******************************************************************************************************/
 
+                                Agent agent = new Agent();
+                                agent.observerEnvironement(tabVal, tabCoord);
+                                agent.choisirAction();
                                 
+                         
                                 List<String> mesPieces = new List<String>();
                                 for (int i = 0; i < tabVal.Length; i++)
                                 {
@@ -76,6 +80,10 @@ namespace processAI1
                                     if (tabVal[i] <= 0) reste.Add(tabCoord[i]);
                                 }
 
+                                // Executer l'action
+                                // coord[0] est la position de la piéce à déplacer
+                                // coord[1] et la position souhaitée
+                                
                                 Random rnd = new Random();
                                 coord[0] = mesPieces[rnd.Next(mesPieces.Count)];
                                 //coord[0] = "b7";
