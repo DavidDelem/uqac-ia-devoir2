@@ -64,10 +64,16 @@ namespace processAI1
                                 /******************************************************************************************************/
 
                                 Agent agent = new Agent();
+                                
+                                // Perception de l'environement grâce aux capteurs
                                 agent.observerEnvironement(tabVal, tabCoord);
+                                
                                 agent.choisirAction();
                                 
-                         
+                               
+                                Console.Write("FIN ------- FIN");
+                                
+                                // a virer
                                 List<String> mesPieces = new List<String>();
                                 for (int i = 0; i < tabVal.Length; i++)
                                 {
@@ -80,8 +86,8 @@ namespace processAI1
                                     if (tabVal[i] <= 0) reste.Add(tabCoord[i]);
                                 }
 
-                                // Executer l'action
-                                // coord[0] est la position de la piéce à déplacer
+                                // Execution de l'action grâce aux effecteurs
+                                // coord[0] est la position actuelle de la piéce à déplacer
                                 // coord[1] et la position souhaitée
                                 
                                 Random rnd = new Random();

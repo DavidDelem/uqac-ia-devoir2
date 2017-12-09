@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace processAI1
 {
@@ -15,50 +16,34 @@ namespace processAI1
 
         public void observerEnvironement(int[] tabVal, String[] tabCoord)
         {
-            
-//            List<String> mesPiecesStringList = new List<String>();
-//            List<String> piecesConcurentStringList = new List<String>();
-//            
-//            for (int i = 0; i < tabVal.Length; i++)
-//            {
-//                if (tabVal[i] > 0) mesPiecesStringList.Add(tabCoord[i]);
-//            }
-//
-//            for (int i = 0; i < tabVal.Length; i++)
-//            {
-//                if (tabVal[i] <= 0) piecesConcurentStringList.Add(tabCoord[i]);
-//            }
 
             // Création de deux listes: une pour mes piéces, l'autre pour celles du concurent
-     
             List<Piece> mesPiecesList = new List<Piece>();
             List<Piece> piecesConcurentList = new List<Piece>();
             
-            // Construction des listes
-            
+            // Construction des listes selon l'état de l'échiquier actuel perçu par les capteurs
             for (int i = 0; i < tabVal.Length; i++)
             {
-                // il faut trouver comment savoir quel est le type de la piéce et l'ajouter dans piece
-                Piece piece = new Piece(tabCoord[i], tabVal[i]);
+                // Détermination du type de la piéce
+                TypesPieces typesPieces = intToTypePiece(tabVal[i]);
+                Piece piece = new Piece(tabCoord[i], typesPieces);
                 
                 if (tabVal[i] > 0)
                 {
                     // Si la piéce m'appartient, je l'ajoute a ma liste
                     mesPiecesList.Add(piece);
+                    Console.WriteLine("Dans piece.Position: "  + piece.Position + ", Dans piece.Type:" + piece.TypePiece);
                 }
                 else
                 {
-                   
                     // Si la piéce ne m'appartient pas, je l'ajoute a la liste de celles de mon concurent
                     piecesConcurentList.Add(piece);
                 }
             }
             
             // Mise à jours de l'état de l'environement tel qu'il est perçu par les capteurs de l'agent
-            
             environement.MesPiecesList = mesPiecesList;
             environement.PiecesConcurentList = piecesConcurentList;
-
         }
 
         public void choisirAction()
@@ -70,6 +55,44 @@ namespace processAI1
             MinMaxAlphaBeta minMaxAlphaBeta = new MinMaxAlphaBeta();
             
             // trouver le meilleur
+        }
+
+        private TypesPieces intToTypePiece(int valeur)
+        {
+            TypesPieces typesPieces;
+            
+            switch (valeur)
+            {
+                case 1:
+                    typesPieces = TypesPieces.PION;
+                    break;
+                case 21:
+                    typesPieces = TypesPieces.TOUR;
+                    break;
+                case 22:
+                    typesPieces = TypesPieces.TOUR;
+                    break;
+                case 31:
+                    typesPieces = TypesPieces.CAVALIER;
+                    break;
+                case 32:
+                    typesPieces = TypesPieces.CAVALIER;
+                    break;
+                case 4:
+                    typesPieces = TypesPieces.FOU;
+                    break;
+                case 5:
+                    typesPieces = TypesPieces.ROI;
+                    break;
+                case 6:
+                    typesPieces = TypesPieces.REINE;
+                    break;
+                default:
+                    typesPieces = TypesPieces.NONE;
+                    break;
+            }
+
+            return typesPieces;
         }
         
     }

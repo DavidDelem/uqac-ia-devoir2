@@ -4,13 +4,25 @@ namespace processAI1
 {
     public class Piece
     {
-        private int type;
+        private TypesPieces typePiece;
         private string position;
 
-        public Piece(string position, int type)
+        public Piece(string position, TypesPieces typePiece)
         {
-            this.type = type;
+            this.typePiece = typePiece;
             this.position = position;
+        }
+
+        public TypesPieces TypePiece
+        {
+            get { return typePiece; }
+            set { typePiece = value; }
+        }
+
+        public string Position
+        {
+            get { return position; }
+            set { position = value; }
         }
     }
 }
