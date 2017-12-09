@@ -1,7 +1,9 @@
 ﻿namespace processAI1
 {
-    public class MinMaAlphaBeta
+    public class MinMaxAlphaBeta
     {
+        
+        
         
     }
 }

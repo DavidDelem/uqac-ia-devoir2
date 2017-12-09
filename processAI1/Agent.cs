@@ -65,6 +65,10 @@ namespace processAI1
         {
             // déterminer coups possible
             // faire min max
+
+            // Recherche du meilleur coup avec MinMax amélioré grâce au Alpha Beta Pruning
+            MinMaxAlphaBeta minMaxAlphaBeta = new MinMaxAlphaBeta();
+            
             // trouver le meilleur
         }
         
