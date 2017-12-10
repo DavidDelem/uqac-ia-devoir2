@@ -7,6 +7,7 @@ namespace processAI1
     {
         private String positionInitiale;
         private String positionFinale;
+        private int nbPoints;
 
         public ActionAgent(string positionInitiale, string positionFinale)
         {
@@ -24,6 +25,12 @@ namespace processAI1
         {
             get { return positionFinale; }
             set { positionFinale = value; }
+        }
+
+        public int NbPoints
+        {
+            get { return nbPoints; }
+            set { nbPoints = value; }
         }
     }
 }
