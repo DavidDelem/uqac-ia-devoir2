@@ -32,12 +32,13 @@ namespace processAI1
                 {
                     // Si la piéce m'appartient, je l'ajoute a ma liste
                     mesPiecesList.Add(piece);
-                    Console.WriteLine("Dans piece.Position: "  + piece.Position + ", Dans piece.Type:" + piece.TypePiece);
+                    Console.WriteLine("J'ai détecté un " + piece.TypePiece + " qui m'appartien en position "  + piece.Position);
                 }
                 else
                 {
                     // Si la piéce ne m'appartient pas, je l'ajoute a la liste de celles de mon concurent
                     piecesConcurentList.Add(piece);
+                    Console.WriteLine("J'ai détecté un " + piece.TypePiece + " concurent en position "  + piece.Position);
                 }
             }
             
@@ -46,15 +47,18 @@ namespace processAI1
             environement.PiecesConcurentList = piecesConcurentList;
         }
 
-        public void choisirAction()
+        public ActionAgent choisirAction()
         {
-            // déterminer coups possible
+            // On détermine tout les coups possibles (ou alors on fait ça direcement dans le min max ?)
             // faire min max
 
             // Recherche du meilleur coup avec MinMax amélioré grâce au Alpha Beta Pruning
             MinMaxAlphaBeta minMaxAlphaBeta = new MinMaxAlphaBeta();
             
-            // trouver le meilleur
+            // min max
+            
+            ActionAgent action = new ActionAgent("a2", "a3"); // Contiendra l'action définie suite au résultat de min max
+            return action;
         }
 
         private TypesPieces intToTypePiece(int valeur)

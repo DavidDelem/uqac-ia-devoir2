@@ -66,10 +66,10 @@ namespace processAI1
                                 Agent agent = new Agent();
                                 
                                 // Perception de l'environement grâce aux capteurs
+                                // A l'issue de son observation l'agent connait la position de ses piéces et de celles du concurent
                                 agent.observerEnvironement(tabVal, tabCoord);
                                 
-                                agent.choisirAction();
-                                
+                                ActionAgent action = agent.choisirAction();
                                
                                 Console.Write("FIN ------- FIN");
                                 
