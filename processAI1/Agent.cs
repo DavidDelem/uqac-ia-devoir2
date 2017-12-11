@@ -50,8 +50,18 @@ namespace processAI1
         public ActionAgent choisirAction()
         {
             // On détermine tout les coups possibles (ou alors on fait ça direcement dans le min max ?)
-            // faire min max
 
+            CalculateurDeCoupPossible calculateurDeCoupPossible = new CalculateurDeCoupPossible();
+            List<ActionAgent> coupsPossibles = new List<ActionAgent>();
+            
+            coupsPossibles = calculateurDeCoupPossible.getListCoupsPossibles(environement.MesPiecesList, environement.PiecesConcurentList);
+            
+            // faire min max:
+            // Wilfried: En gros t'as pas besoin de stocker tous les coups possibles, il faut juste retourner
+            // la max ou min value en fct de la prédiction de tes coups ou celui de ton adversaire et lorsque
+            // ça remonte à ta profondeur initiale, si la bestValue est meilleur alors tu retiens le coup correspondant
+            // à cette bestValue ^^ Je sais pas trop si c'est clair... ^^
+            
             // Recherche du meilleur coup avec MinMax amélioré grâce au Alpha Beta Pruning
             MinMaxAlphaBeta minMaxAlphaBeta = new MinMaxAlphaBeta();
             
