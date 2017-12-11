@@ -47,25 +47,25 @@ namespace processAI1
                     // On commence par gérer les mouvement verticaux possibles
                     for (int i = ligne++; i <= 8; i++)
                     {
-                        if (isCaseDejaOccupee(i, colonne, true)) break;
+                        if (IsCaseDejaOccupee(i, colonne, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));   
                     }
                     
                     for (int i = ligne--; i >= 1; i--)
                     {
-                        if (isCaseDejaOccupee(i, colonne, true)) break;
+                        if (IsCaseDejaOccupee(i, colonne, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));   
                     }
                     
                     // Maintenant on gére les mouvements horizontaux
                     for (int i = colonne++; i <= 8; i++)
                     {
-                        if (isCaseDejaOccupee(ligne, i, true)) break;
+                        if (IsCaseDejaOccupee(ligne, i, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));   
                     }
                     for (int i = colonne--; i >= 1; i--)
                     {
-                        if (isCaseDejaOccupee(ligne, i, true)) break;
+                        if (IsCaseDejaOccupee(ligne, i, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));   
                     }
                 }
@@ -81,7 +81,7 @@ namespace processAI1
 
                     while (i <= 8 && j > 0)
                     {
-                        if (isCaseDejaOccupee(j, i, true)) break;
+                        if (IsCaseDejaOccupee(j, i, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));   
                         i++;
                         j--;
@@ -92,7 +92,7 @@ namespace processAI1
 
                     while (i <= 8 && j <= 8)
                     {
-                        if (isCaseDejaOccupee(j, i, true)) break;
+                        if (IsCaseDejaOccupee(j, i, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));   
                         i++;
                         j++;
@@ -103,7 +103,7 @@ namespace processAI1
 
                     while (i > 0 && j > 0)
                     {
-                        if (isCaseDejaOccupee(j, i, true)) break;
+                        if (IsCaseDejaOccupee(j, i, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));   
                         i--;
                         j--;
@@ -114,7 +114,7 @@ namespace processAI1
 
                     while (i > 0 && j <= 8)
                     {
-                        if (isCaseDejaOccupee(j, i, true)) break;
+                        if (IsCaseDejaOccupee(j, i, true)) break;
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));   
                         i--;
                         j++;
@@ -199,20 +199,38 @@ namespace processAI1
                     // Sauf si une piéce alliée y est déjà 
                     // Il ne peut pas se mettre en position d'echec
                     
-                    // if pas de piece allié a ajouter + if dans le plateau
-                    if((colonne + 1) < 8 && !isCaseDejaOccupee(ligne, colonne, false))
+                    if((colonne + 1) <= 8 && !IsCaseDejaOccupee(ligne, colonne+1, false))
                     {
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne + 1) + "" + ligne));
                     }
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne + 1) + "" + ligne));
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne - 1) + "" + ligne));
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne) + "" + (ligne+1)));
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne) + "" + (ligne-1)));
-
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne + 1) + "" + (ligne+1)));
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne + 1) + "" + (ligne-1)));
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne - 1) + "" + (ligne+1)));
-                    actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne - 1) + "" + (ligne-1)));
+                    if ((colonne - 1) > 0 && !IsCaseDejaOccupee(ligne, colonne-1, false))
+                    {
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne - 1) + "" + ligne));
+                    }
+                    if ((ligne + 1) <= 8 && !IsCaseDejaOccupee(ligne+1, colonne, false))
+                    {
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne) + "" + (ligne + 1)));
+                    }
+                    if ((ligne - 1) > 0 && !IsCaseDejaOccupee(ligne-1, colonne, false))
+                    {
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne) + "" + (ligne - 1)));
+                    }
+                    if ((ligne + 1) <= 8 && (colonne + 1) <= 8 && !IsCaseDejaOccupee(ligne + 1, colonne + 1, false))
+                    {
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne + 1) + "" + (ligne + 1)));
+                    }
+                    if ((ligne - 1) > 0 && (colonne + 1) <= 8 && !IsCaseDejaOccupee(ligne - 1, colonne + 1, false))
+                    {
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne + 1) + "" + (ligne - 1)));
+                    }
+                    if ((ligne + 1) <= 8 && (colonne - 1) > 0 && !IsCaseDejaOccupee(ligne + 1, colonne - 1, false))
+                    {
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne - 1) + "" + (ligne + 1)));
+                    }
+                    if ((ligne - 1) > 0 && (colonne - 1) > 0 && !IsCaseDejaOccupee(ligne - 1, colonne - 1, false))
+                    {
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne - 1) + "" + (ligne - 1)));
+                    }
                 }
                 
             }
@@ -224,7 +242,7 @@ namespace processAI1
         // Si totuesLesPieces est à true: on contrôle la présence de toutes les piéces
         // Sinon, on controle uniquement la présence de nos piéces
 
-        private Boolean isCaseDejaOccupee(int i, int j, Boolean toutesLesPieces)
+        private Boolean IsCaseDejaOccupee(int i, int j, Boolean toutesLesPieces)
         {
             if (toutesLesPieces)
             {
