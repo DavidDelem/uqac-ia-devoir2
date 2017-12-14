@@ -1,5 +1,12 @@
 ﻿namespace processAI1
 {
+
+    /**
+    *
+    * Types de pièces possibles
+    *
+    **/
+    
     public enum TypesPieces
     {
         NONE,

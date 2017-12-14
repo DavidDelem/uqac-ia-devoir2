@@ -2,6 +2,13 @@
 
 namespace processAI1
 {
+    
+    /**
+    *
+    * Modélise une pièce sur l'échiquier
+    *
+    **/
+    
     public class Piece
     {
         private TypesPieces typePiece;

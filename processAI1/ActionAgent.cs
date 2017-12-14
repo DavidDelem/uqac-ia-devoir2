@@ -3,6 +3,13 @@ using System.Runtime.CompilerServices;
 
 namespace processAI1
 {
+    
+    /**
+    *
+    * Modélise une action possible de l'agent
+    *
+    **/
+    
     public class ActionAgent
     {
         private String positionInitiale;

@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 namespace processAI1
 {
+    
+    /**
+    *
+    * Modélise l'environement tel que perçu par les capteurs de l'agent
+    *
+    **/
+    
     public class Environement
     {
         private List<Piece> mesPiecesList;
