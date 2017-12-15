@@ -48,7 +48,7 @@ public class Agent
                 mesPiecesList.Add(piece);
                 Console.WriteLine("J'ai détecté un " + piece.TypePiece + " qui m'appartient en position "  + piece.Position);
             }
-            else
+            else if (tabVal[i] < 0)
             {
                 Piece piece = new Piece(tabCoord[i], typesPieces,true);
                 // Si la piéce ne m'appartient pas, je l'ajoute a la liste de celles de mon concurent
