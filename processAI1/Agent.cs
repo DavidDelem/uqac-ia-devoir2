@@ -40,16 +40,17 @@ public class Agent
         {
             // Détermination du type de la piéce
             TypesPieces typesPieces = intToTypePiece(tabVal[i]);
-            Piece piece = new Piece(tabCoord[i], typesPieces);
             
             if (tabVal[i] > 0)
             {
+                Piece piece = new Piece(tabCoord[i], typesPieces,false);
                 // Si la piéce m'appartient, je l'ajoute a ma liste
                 mesPiecesList.Add(piece);
                 Console.WriteLine("J'ai détecté un " + piece.TypePiece + " qui m'appartient en position "  + piece.Position);
             }
             else
             {
+                Piece piece = new Piece(tabCoord[i], typesPieces,true);
                 // Si la piéce ne m'appartient pas, je l'ajoute a la liste de celles de mon concurent
                 piecesConcurentList.Add(piece);
                 Console.WriteLine("J'ai détecté un " + piece.TypePiece + " concurent en position "  + piece.Position);
@@ -74,17 +75,16 @@ public class Agent
 
         CalculateurDeCoupPossible calculateurDeCoupPossible = new CalculateurDeCoupPossible();
         List<ActionAgent> coupsPossibles = new List<ActionAgent>();
+        List<Piece> mesPiecesList = environement.MesPiecesList;
+        List<Piece> piecesConcurentList = environement.PiecesConcurentList;
         
         coupsPossibles = calculateurDeCoupPossible.getListCoupsPossibles(environement.MesPiecesList, environement.PiecesConcurentList);
         
         // Recherche du meilleur coup avec MinMax amélioré grâce au Alpha Beta Pruning
-        MinMaxAlphaBeta minMaxAlphaBeta = new MinMaxAlphaBeta();
+        MinMaxAlphaBeta minMaxAlphaBeta = new MinMaxAlphaBeta(coupsPossibles, mesPiecesList, piecesConcurentList);
+        ActionAgent bestMove = minMaxAlphaBeta.bestMove();
         
-        // min max
-        
-        // Envoi du meilleur coup sélectionné
-        ActionAgent action = new ActionAgent("a2", "a3"); // Contiendra l'action définie suite au résultat de min max
-        return action;
+        return bestMove;
     }
     
         
