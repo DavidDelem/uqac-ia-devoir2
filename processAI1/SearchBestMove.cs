@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 
 namespace processAI1
 {
-    public class MinMaxAlphaBeta
+    public class SearchBestMove
     {
         private int score;
         private List<ActionAgent> coupsPossibles;
         private List<Piece> mesPieces, piecesConcuList, mesPiecesTmp, piecesConcuListTmp;
         
-        public MinMaxAlphaBeta(List<ActionAgent> coupsPossibles, List<Piece> mesPieces, List<Piece> piecesConcuList)
+        public SearchBestMove(List<ActionAgent> coupsPossibles, List<Piece> mesPieces, List<Piece> piecesConcuList)
         {
             score = 0;
             this.coupsPossibles = coupsPossibles;

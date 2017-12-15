@@ -81,8 +81,8 @@ public class Agent
         coupsPossibles = calculateurDeCoupPossible.getListCoupsPossibles(environement.MesPiecesList, environement.PiecesConcurentList);
         
         // Recherche du meilleur coup avec MinMax amélioré grâce au Alpha Beta Pruning
-        MinMaxAlphaBeta minMaxAlphaBeta = new MinMaxAlphaBeta(coupsPossibles, mesPiecesList, piecesConcurentList);
-        ActionAgent bestMove = minMaxAlphaBeta.bestMove();
+        SearchBestMove searchBestMove = new SearchBestMove(coupsPossibles, mesPiecesList, piecesConcurentList);
+        ActionAgent bestMove = searchBestMove.bestMove();
         
         return bestMove;
     }
