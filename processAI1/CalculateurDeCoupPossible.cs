@@ -99,75 +99,41 @@ namespace processAI1
                     
                     for (int i = ligne++; i <= 8; i++)
                     {
-                        if (piece.TypePiece == TypesPieces.TOUR)
-                        {
-                            // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(i, colonne, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
-                            if (IsCaseDejaOccupee(i, colonne, false, true)) break;
+                        // si case déjà occupé par une piéce aliée: stop immédiat
+                        if (IsCaseDejaOccupee(i, colonne, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
+                        if (IsCaseDejaOccupee(i, colonne, false, true)) break;
 
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(i, colonne, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
-                        }
                     }
                     
                     for (int i = ligne--; i >= 1; i--)
                     {
-                        if (piece.TypePiece == TypesPieces.TOUR)
-                        {
-                            // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(i, colonne, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
-                            if (IsCaseDejaOccupee(i, colonne, false, true)) break;
-
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(i, colonne, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
-                        }
+                        // si case déjà occupé par une piéce aliée: stop immédiat
+                        if (IsCaseDejaOccupee(i, colonne, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
+                        if (IsCaseDejaOccupee(i, colonne, false, true)) break;
                     }
                     
                     // Maintenant on gére les mouvements horizontaux dans les deux sens
                     
                     for (int i = colonne++; i <= 8; i++)
                     {
-                        if (piece.TypePiece == TypesPieces.TOUR)
-                        {
-                            // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(i, colonne, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
-                            if (IsCaseDejaOccupee(i, colonne, false, true)) break;
-
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(i, colonne, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
-                        }
+                        // si case déjà occupé par une piéce aliée: stop immédiat
+                        if (IsCaseDejaOccupee(i, colonne, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
+                        if (IsCaseDejaOccupee(i, colonne, false, true)) break;
                     }
                     for (int i = colonne--; i >= 1; i--)
                     {
-                        if (piece.TypePiece == TypesPieces.TOUR)
-                        {
-                            // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(i, colonne, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
-                            if (IsCaseDejaOccupee(i, colonne, false, true)) break;
+                        // si case déjà occupé par une piéce aliée: stop immédiat
+                        if (IsCaseDejaOccupee(i, colonne, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
+                        if (IsCaseDejaOccupee(i, colonne, false, true)) break;
 
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(i, colonne, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
-                        }
                     }
                 }
                 
@@ -191,19 +157,12 @@ namespace processAI1
 
                     while (i <= 8 && j > 0)
                     {
-                        if (piece.TypePiece == TypesPieces.FOU)
-                        {
                             // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(j, i, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                            if (IsCaseDejaOccupee(j, i, false, true)) break;
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(j, i, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                        }
+                        if (IsCaseDejaOccupee(j, i, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
+                        if (IsCaseDejaOccupee(j, i, false, true)) break;
+                        
                         
                         i++;
                         j--;
@@ -216,19 +175,11 @@ namespace processAI1
 
                     while (i <= 8 && j <= 8)
                     {
-                        if (piece.TypePiece == TypesPieces.FOU)
-                        {
-                            // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(j, i, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                            if (IsCaseDejaOccupee(j, i, false, true)) break;
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(j, i, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                        }
+                        // si case déjà occupé par une piéce aliée: stop immédiat
+                        if (IsCaseDejaOccupee(j, i, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
+                        if (IsCaseDejaOccupee(j, i, false, true)) break;
                        
                         i++;
                         j++;
@@ -241,20 +192,12 @@ namespace processAI1
 
                     while (i > 0 && j > 0)
                     {
-                        if (piece.TypePiece == TypesPieces.FOU)
-                        {
-                            // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(j, i, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                            if (IsCaseDejaOccupee(j, i, false, true)) break;
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(j, i, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                        }
-                        
+                        // si case déjà occupé par une piéce aliée: stop immédiat
+                        if (IsCaseDejaOccupee(j, i, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
+                        if (IsCaseDejaOccupee(j, i, false, true)) break;
+                    
                         i--;
                         j--;
                     }
@@ -266,19 +209,11 @@ namespace processAI1
 
                     while (i > 0 && j <= 8)
                     {
-                        if (piece.TypePiece == TypesPieces.FOU)
-                        {
-                            // si case déjà occupé par une piéce aliée: stop immédiat
-                            if (IsCaseDejaOccupee(j, i, true, false)) break;
-                            // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                            actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                            if (IsCaseDejaOccupee(j, i, false, true)) break;
-                        }
-                        else if (piece.TypePiece == TypesPieces.REINE)
-                        {
-                            // si case non occupée par une piéce aliée: on ajoute le coup
-                            if (!IsCaseDejaOccupee(j, i, true, false)) actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
-                        }
+                        // si case déjà occupé par une piéce aliée: stop immédiat
+                        if (IsCaseDejaOccupee(j, i, true, false)) break;
+                        // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + j));
+                        if (IsCaseDejaOccupee(j, i, false, true)) break;
                         
                         i--;
                         j++;
