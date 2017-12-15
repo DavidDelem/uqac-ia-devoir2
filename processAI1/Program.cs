@@ -68,33 +68,17 @@ namespace processAI1
                                 // Perception de l'environement grâce aux capteurs
                                 // A l'issue de son observation l'agent connait la position de ses piéces et de celles du concurent
                                 agent.observerEnvironement(tabVal, tabCoord);
-                                
+                      
+                                // Chois d'une action
                                 ActionAgent action = agent.choisirAction();
                                
-                                Console.Write("FIN ------- FIN");
-                                
-                                // a virer
-                                List<String> mesPieces = new List<String>();
-                                for (int i = 0; i < tabVal.Length; i++)
-                                {
-                                    if (tabVal[i] > 0) mesPieces.Add(tabCoord[i]);
-                                }
-
-                                List<String> reste = new List<String>();
-                                for (int i = 0; i < tabVal.Length; i++)
-                                {
-                                    if (tabVal[i] <= 0) reste.Add(tabCoord[i]);
-                                }
-
                                 // Execution de l'action grâce aux effecteurs
                                 // coord[0] est la position actuelle de la piéce à déplacer
                                 // coord[1] et la position souhaitée
-                                
-                                Random rnd = new Random();
-                                coord[0] = mesPieces[rnd.Next(mesPieces.Count)];
+                                coord[0] = action.PositionInitiale;
                                 //coord[0] = "b7";
                                 //coord[1] = "b8";
-                                coord[1] = tabCoord[rnd.Next(reste.Count)];
+                                coord[1] = action.PositionFinale;
                                 //coord[2] = "P";
 
                                 

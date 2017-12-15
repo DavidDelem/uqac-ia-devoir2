@@ -71,8 +71,7 @@ public class Agent
     
     public ActionAgent choisirAction()
     {
-        // On détermine tout les coups possibles (ou alors on fait ça direcement dans le min max ?)
-
+        // On détermine tout les coups possibles
         CalculateurDeCoupPossible calculateurDeCoupPossible = new CalculateurDeCoupPossible();
         List<ActionAgent> coupsPossibles = new List<ActionAgent>();
         List<Piece> mesPiecesList = environement.MesPiecesList;
@@ -80,7 +79,7 @@ public class Agent
         
         coupsPossibles = calculateurDeCoupPossible.getListCoupsPossibles(environement.MesPiecesList, environement.PiecesConcurentList);
         
-        // Recherche du meilleur coup avec MinMax amélioré grâce au Alpha Beta Pruning
+        // Recherche du meilleur coup
         SearchBestMove searchBestMove = new SearchBestMove(coupsPossibles, mesPiecesList, piecesConcurentList);
         ActionAgent bestMove = searchBestMove.bestMove();
         
@@ -118,10 +117,10 @@ public class Agent
             case 4:
                 typesPieces = TypesPieces.FOU;
                 break;
-            case 5:
+            case 6:
                 typesPieces = TypesPieces.ROI;
                 break;
-            case 6:
+            case 5:
                 typesPieces = TypesPieces.REINE;
                 break;
             default:
