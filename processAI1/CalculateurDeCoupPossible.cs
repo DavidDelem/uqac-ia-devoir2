@@ -102,7 +102,7 @@ namespace processAI1
                         // si case déjà occupé par une piéce aliée: stop immédiat
                         if (IsCaseDejaOccupee(i, colonne, true, false)) break;
                         // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                        actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne) + "" + i));
                         if (IsCaseDejaOccupee(i, colonne, false, true)) break;
 
                     }
@@ -112,7 +112,7 @@ namespace processAI1
                         // si case déjà occupé par une piéce aliée: stop immédiat
                         if (IsCaseDejaOccupee(i, colonne, true, false)) break;
                         // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
-                        actionAgentList.Add(new ActionAgent(piece.Position, colonne + "" + i));
+                        actionAgentList.Add(new ActionAgent(piece.Position, intToChar(colonne) + "" + i));
                         if (IsCaseDejaOccupee(i, colonne, false, true)) break;
                     }
                     
@@ -121,18 +121,18 @@ namespace processAI1
                     for (int i = (colonne + 1); i <= 8; i++)
                     {
                         // si case déjà occupé par une piéce aliée: stop immédiat
-                        if (IsCaseDejaOccupee(i, colonne, true, false)) break;
+                        if (IsCaseDejaOccupee(colonne, i, true, false)) break;
                         // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
-                        if (IsCaseDejaOccupee(i, colonne, false, true)) break;
+                        if (IsCaseDejaOccupee(colonne, i, false, true)) break;
                     }
                     for (int i = (colonne - 1); i >= 1; i--)
                     {
                         // si case déjà occupé par une piéce aliée: stop immédiat
-                        if (IsCaseDejaOccupee(i, colonne, true, false)) break;
+                        if (IsCaseDejaOccupee(colonne, i, true, false)) break;
                         // si case non occupée ou déjà occupé par une piéce adverse: on ajoute le coup puis stop
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
-                        if (IsCaseDejaOccupee(i, colonne, false, true)) break;
+                        if (IsCaseDejaOccupee(colonne, i, false, true)) break;
 
                     }
                 }
