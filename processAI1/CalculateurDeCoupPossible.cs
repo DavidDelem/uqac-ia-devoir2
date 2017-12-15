@@ -58,13 +58,27 @@ namespace processAI1
                     if (ligne == 2)
                     {
                         // On peut déplacer le pion de 1 ou 2 cases en avant lorsqu'il est a sa position initiale
-                        actionAgentList.Add(new ActionAgent(piece.Position, piece.Position[0] + "" + (ligne+1)));
-                        actionAgentList.Add(new ActionAgent(piece.Position, piece.Position[0] + "" + (ligne+2)));
-                    }
-                    else if (ligne > 0 && ligne < 8)
-                    {
-                        // On peut déplacer le pion d'une case en avant tant qu'il n'attein pas la dernière
-                        actionAgentList.Add(new ActionAgent(piece.Position, piece.Position[0] + "" + (ligne+1)));   
+                        // A condition qu'il n'y ai pas déjà une pièce alliée dessus
+                        if (!IsCaseDejaOccupee(ligne + 1, colonne, true, false))
+                        {
+                            actionAgentList.Add(new ActionAgent(piece.Position, piece.Position[0] + "" + (ligne + 1)));
+                            if (!IsCaseDejaOccupee(ligne + 2, colonne, true, false))
+                            {
+                                actionAgentList.Add(new ActionAgent(piece.Position,
+                                    piece.Position[0] + "" + (ligne + 2)));
+                            }
+
+                        }
+                        else if (ligne > 0 && ligne < 8)
+                        {
+                            // On peut déplacer le pion d'une case en avant tant qu'il n'attein pas la dernière
+                            // A condition qu'il n'y ai pas déjà une pièce alliée dessus
+                            if (!IsCaseDejaOccupee(ligne + 1, colonne, true, false))
+                            {
+                                actionAgentList.Add(new ActionAgent(piece.Position,
+                                    piece.Position[0] + "" + (ligne + 1)));
+                            }
+                        }
                     }
                 }
                 
