@@ -97,7 +97,7 @@ namespace processAI1
                     
                     // On commence par gérer les mouvement verticaux possibles dans les deux sens
                     
-                    for (int i = ligne++; i <= 8; i++)
+                    for (int i = (ligne + 1); i <= 8; i++)
                     {
                         // si case déjà occupé par une piéce aliée: stop immédiat
                         if (IsCaseDejaOccupee(i, colonne, true, false)) break;
@@ -107,7 +107,7 @@ namespace processAI1
 
                     }
                     
-                    for (int i = ligne--; i >= 1; i--)
+                    for (int i = (ligne - 1); i >= 1; i--)
                     {
                         // si case déjà occupé par une piéce aliée: stop immédiat
                         if (IsCaseDejaOccupee(i, colonne, true, false)) break;
@@ -118,7 +118,7 @@ namespace processAI1
                     
                     // Maintenant on gére les mouvements horizontaux dans les deux sens
                     
-                    for (int i = colonne++; i <= 8; i++)
+                    for (int i = (colonne + 1); i <= 8; i++)
                     {
                         // si case déjà occupé par une piéce aliée: stop immédiat
                         if (IsCaseDejaOccupee(i, colonne, true, false)) break;
@@ -126,7 +126,7 @@ namespace processAI1
                         actionAgentList.Add(new ActionAgent(piece.Position, intToChar(i) + "" + ligne));
                         if (IsCaseDejaOccupee(i, colonne, false, true)) break;
                     }
-                    for (int i = colonne--; i >= 1; i--)
+                    for (int i = (colonne - 1); i >= 1; i--)
                     {
                         // si case déjà occupé par une piéce aliée: stop immédiat
                         if (IsCaseDejaOccupee(i, colonne, true, false)) break;
@@ -152,8 +152,8 @@ namespace processAI1
 
                     // CAS 1 de diagonale
                     
-                    int i = colonne++;
-                    int j = ligne--;
+                    int i = colonne + 1;
+                    int j = ligne - 1;
 
                     while (i <= 8 && j > 0)
                     {
@@ -170,8 +170,8 @@ namespace processAI1
                     
                     // CAS 2 de diagonale
                     
-                    i = colonne++;
-                    j = ligne++;
+                    i = colonne + 1;
+                    j = ligne + 1;
 
                     while (i <= 8 && j <= 8)
                     {
@@ -187,8 +187,8 @@ namespace processAI1
                     
                     // CAS 3 de diagonale
                     
-                    i = colonne--;
-                    j = ligne--;
+                    i = colonne - 1;
+                    j = ligne - 1;
 
                     while (i > 0 && j > 0)
                     {
@@ -204,8 +204,8 @@ namespace processAI1
                     
                     // CAS 4 de diagonale
                     
-                    i = colonne--;
-                    j = ligne++;
+                    i = colonne - 1;
+                    j = ligne + 1;
 
                     while (i > 0 && j <= 8)
                     {
